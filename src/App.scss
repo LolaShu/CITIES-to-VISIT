@@ -1,0 +1,111 @@
+@import './styles/variables.scss';
+
+@import './styles/mixins.scss';
+@import "react-slideshow-image/dist/styles.css";
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+
+
+html {
+    font-size: 62.5%;    
+    scroll-behavior: smooth;
+    background-color:#FFE8D6;
+}
+
+
+.wrapper {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;    
+}
+
+.App {
+  text-align: center;  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  h1{
+  // @include fluid-font-size(8rem, 3rem);
+  font-size: 6rem;
+  font-family: 'Satisfy', cursive;
+  margin: 50px auto;
+}
+  .parent{
+  flex-grow: 1;
+  border: 1px solid red;
+
+}
+}
+
+
+footer{
+  background-color:#000000;
+  p{
+    font-size: 2rem;
+    margin: 10px auto;
+    @include fluid-font-size(1.6rem, 2rem);
+    color: #FFE8D6;
+    font-family: 'Satisfy', cursive;
+  }
+  
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+.background-img{
+height: 350px;
+  background-image: url('./styles/london-skyline.png');
+  background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
+
+
+
+
+
+
+//Slide styling
+.react-slideshow-container{
+  margin-bottom: 100px;
+}
+.each-fade {
+  // display: flex;
+  width: 100%;
+  height: 500px;
+}
+
+.each-fade > div {
+  width: 100%;
+}
+
+.each-fade > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// .react-slideshow-container{
+//   visibility: hidden;
+// }
+
+// .each-fade p {
+//   width: 25%;
+//   font-size: 1em;
+//   display: flex;
+//   text-align: center;
+//   justify-content: center;
+//   align-items: center;
+//   margin: 0;
+//   background: #adceed;
+// }

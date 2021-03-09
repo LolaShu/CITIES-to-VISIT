@@ -1,0 +1,116 @@
+//calculate font size & line-height
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-font-size($min-font-size, $max-font-size, $min-vw: 30rem, $max-vw: 160rem) {
+    
+    $u1: unit($min-font-size);
+    $u2: unit($max-font-size);
+    $u3: unit($min-vw);
+    $u4: unit($max-vw);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            line-height: calc(#{$min-font-size} + 5px);
+            @media (min-width: $min-vw) {
+                $fluid-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+                font-size: $fluid-size;
+                line-height: calc(#{$fluid-size} + 5px);
+            }
+            @media (min-width: $max-vw) {
+                font-size: $max-font-size;
+                line-height: calc(#{$max-font-size} + 5px);
+            }
+        }
+    }
+}
+
+//calculate width and height
+@mixin fluid-width-height($min-size, $max-size, $min-vw: 30rem, $max-vw: 160rem) {
+    
+    $u1: unit($min-size);
+    $u2: unit($max-size);
+    $u3: unit($min-vw);
+    $u4: unit($max-vw);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            height: $min-size;
+            width: $min-size;            
+            @media (min-width: $min-vw) {
+                $fluid-size: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+                height: $fluid-size;
+                width: $fluid-size;
+            }
+            @media (min-width: $max-vw) {
+                height: $max-size;
+                width: $max-size;
+            }
+        }
+    }
+}
+
+//calculate width only
+@mixin fluid-width($min-size, $max-size, $min-vw: 30rem, $max-vw: 160rem) {
+    
+    $u1: unit($min-size);
+    $u2: unit($max-size);
+    $u3: unit($min-vw);
+    $u4: unit($max-vw);
+
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            width: $min-size;            
+            @media (min-width: $min-vw) {
+                $fluid-size: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+                width: $fluid-size;
+            }
+            @media (min-width: $max-vw) {
+                width: $max-size;
+            }
+        }
+    }
+}
+
+
+
+//animated underline on hover
+@mixin animated-underline($color, $el) {
+    a {
+        position: relative;
+    }
+    a:after {
+        content: '';
+        height: 1.5px;
+        position: absolute;
+        bottom: -4px;
+        background: $color; 
+        width: 0;
+        left: 50%;
+        transition: width 0.3s, left 0.3s;
+    }
+    #{$el}:hover a:after, #{$el}:focus a:after {
+        width: 100%;
+        left: 0;
+    }
+}
+
+// @mixin small-laptop {
+//     @media (max-width: 1030px) {
+//         @content;
+//     }
+// }
+
+// @mixin tablet {
+//     @media (max-width: 700px) {
+//         @content;
+//     }
+// }
+
+// @mixin small-phone {
+//     @media (max-width: 400px) {
+//         @content;
+//     }
+// }
