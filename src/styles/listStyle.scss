@@ -1,0 +1,89 @@
+.cities-box{
+    display: flex;
+    flex-direction: column; 
+    border: 1px solid black;
+    margin: 30px auto;
+}
+
+.more-cities{    
+    
+    
+    .to-visit{
+        @include fluid-font-size(2rem, 3rem);
+        font-family: 'Dancing Script', cursive;
+        margin-bottom: 20px;
+        
+    }
+
+    input[type=text]{
+        width: 150px;
+        height: 40px;
+        @include fluid-font-size(1.6rem, 2rem);
+        background: $lightcolor;
+        font-family: 'Raleway', sans-serif;
+        border: 1px solid $darkcolor;
+        margin: 10px auto;
+        box-shadow: 5px 5px 5px $darkcolor;
+        transition: all ease-in-out .2s;
+    }
+
+    input[type=text]:hover,
+    input[type=text]:focus{
+        background: $hoverColor;
+    }
+
+    button{        
+        height: 40px;
+        padding: 5px;
+        @include fluid-font-size(1.6rem, 2rem);
+        font-family: 'Raleway', sans-serif;
+        border: 1px solid $darkcolor;
+        background: $darkcolor;
+        color: $lightcolor;
+        box-shadow: 5px 5px 5px $darkcolor;
+        transition: all ease-in-out .2s;
+    }
+
+    button:hover,
+    button:focus{       
+        border: 1px solid $darkcolor;           
+        background: $lightcolor;
+        color: $darkcolor;
+    }
+    }
+
+    .cities-list{
+        @include fluid-font-size(1.6rem, 2rem);
+        font-family: 'Raleway', sans-serif;
+        list-style: none;
+        text-align: center;
+        text-align: left;
+        margin: 10px auto;
+        
+
+        li{
+            margin:10px auto;     
+                button{
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                    padding: 5px;
+                    @include fluid-font-size(1.6rem, 2rem);
+                    font-family: 'Raleway', sans-serif;
+                    border: none;  
+                    background: none;                  
+                    color: $darkcolor;                                    
+                    transition: all ease-in-out .2s;
+                } 
+                
+                button:hover,
+                button:focus{     
+                    transform: scale(1.5);
+                }
+        
+        }
+
+        }
+
+
+    
