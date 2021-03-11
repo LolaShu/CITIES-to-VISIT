@@ -1,29 +1,28 @@
 .cities-box{
     display: flex;
-    flex-direction: column; 
-    border: 1px solid black;
-    margin: 30px auto;
+    flex-direction: column;     
+    margin-bottom: 300px;
+    margin-top: 20px;    
 }
 
-.more-cities{    
-    
-    
+.more-cities{        
+    text-align: center;
     .to-visit{
-        @include fluid-font-size(2rem, 3rem);
-        font-family: 'Dancing Script', cursive;
-        margin-bottom: 20px;
-        
+        @include fluid-font-size(2rem, 5rem);
+        font-family: "Dancing Script", cursive;
+        margin-bottom: 20px;     
     }
 
     input[type=text]{
-        width: 150px;
+        width: 200px;
         height: 40px;
         @include fluid-font-size(1.6rem, 2rem);
         background: $lightcolor;
-        font-family: 'Raleway', sans-serif;
-        border: 1px solid $darkcolor;
-        margin: 10px auto;
+        font-family: "Raleway", sans-serif;
+        border: 1px solid $darkcolor;       
+        padding: 5px;
         box-shadow: 5px 5px 5px $darkcolor;
+        outline: none;
         transition: all ease-in-out .2s;
     }
 
@@ -32,16 +31,16 @@
         background: $hoverColor;
     }
 
-    button{        
+    button{ 
         height: 40px;
-        padding: 5px;
+        padding: 5px 15px;
         @include fluid-font-size(1.6rem, 2rem);
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         border: 1px solid $darkcolor;
         background: $darkcolor;
         color: $lightcolor;
         box-shadow: 5px 5px 5px $darkcolor;
-        transition: all ease-in-out .2s;
+        transition: all ease-in-out .3s;
     }
 
     button:hover,
@@ -52,9 +51,17 @@
     }
     }
 
+    .cities-to-visit{       
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+        margin-top: 30px;
+        margin-bottom: 10px;      
+    }
+
     .cities-list{
         @include fluid-font-size(1.6rem, 2rem);
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
         list-style: none;
         text-align: center;
         text-align: left;
@@ -69,7 +76,7 @@
                     border-radius: 50%;
                     padding: 5px;
                     @include fluid-font-size(1.6rem, 2rem);
-                    font-family: 'Raleway', sans-serif;
+                    font-family: "Raleway", sans-serif;
                     border: none;  
                     background: none;                  
                     color: $darkcolor;                                    

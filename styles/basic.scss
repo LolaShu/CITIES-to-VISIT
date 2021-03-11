@@ -1,0 +1,103 @@
+html {
+    font-size: 62.5%;
+    background-color:$lightcolor;
+}
+
+.wrapper {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;    
+}
+.App {   
+    text-align: center;  
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    h1{
+        @include fluid-font-size(3rem, 8rem);  
+        font-family: "Dancing Script", cursive;
+        margin: 50px auto;
+    }
+    .parent{
+    flex-grow: 1;
+    background-image: url("../src/assets/skyline.png");
+    background-repeat: no-repeat;   
+    background-position:bottom;
+}
+}
+
+
+//Slide styling
+.react-slideshow-container{
+    margin-bottom: 100px;
+    box-shadow: 10px 10px 10px $darkcolor;  
+}
+.each-fade {  
+    width: 100%;
+    height: 500px;  
+}
+
+.each-fade > div {
+    width: 100%;
+    height: 500px;  
+}
+
+.each-fade > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+}
+
+.city-choice{
+    display: flex;  
+    justify-content: center;
+    margin: 50px auto;
+    @include fluid-font-size(1.6rem, 2rem);
+    select{
+        background-image: url("../src/assets/arrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% center;
+        background-size: 25px 25px;  
+        font-family: "Raleway", sans-serif;
+        padding: 5px;
+        width: 200px;
+        height: 40px;
+        background-color: $lightcolor;          
+        cursor: pointer;
+        border: 1px solid $darkcolor;
+        color:$darkcolor;    
+        appearance:none;
+        outline: none;
+        text-align: center;  
+        box-shadow: 5px 5px 5px $darkcolor;
+        transition: all ease-in-out .2s;
+    }
+
+    select:hover,
+    select:focus{
+        background-color: $hoverColor;
+    }
+    
+    option{
+        background:$lightcolor;
+        text-align: center;
+        outline: none;   
+        }
+}
+
+footer{
+    background-color:$darkcolor;
+    p{
+        font-size: 2rem;
+        margin: 10px auto;
+        @include fluid-font-size(1.6rem, 2rem);
+        color: $lightcolor;
+        font-family: "Raleway", sans-serif;
+        @include animated-underline($lightcolor, "span");  
+
+        a{
+        color: $lightcolor;
+        text-decoration: none;
+        }
+    }  
+}
