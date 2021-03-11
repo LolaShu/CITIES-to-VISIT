@@ -7,7 +7,6 @@ const Form = (props) => {
         if (userChoice !== "placeholder") {
             props.getPhotos(userChoice);
         }
-
     })
     return (
         <form className="city-choice">
