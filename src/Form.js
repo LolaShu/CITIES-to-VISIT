@@ -2,14 +2,13 @@
 import { useEffect, useState } from "react";
 
 const Form = (props) => {
-    const [userChoice, setUserChoice] = useState("placeholder")
-    console.log(userChoice)
+    const [userChoice, setUserChoice] = useState("placeholder")    
     useEffect(() => {
         if (userChoice !== "placeholder") {
             props.getPhotos(userChoice);
         }
 
-    }, [userChoice])
+    })
     return (
         <form className="city-choice">
             <label htmlFor="userChoice" className="sr-only">Select the city</label>

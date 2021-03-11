@@ -39,8 +39,7 @@ function App() {
   //for city list
   useEffect(() => {
     const dbRef = firebase.database().ref();
-    dbRef.on("value", (data) => {
-      console.log(data.val());
+    dbRef.on("value", (data) => {      
       const cityData = data.val();
       const cityBag = [];
       for (let cityKey in cityData) {
@@ -82,7 +81,7 @@ function App() {
             <DisplayPhotos photos={randomPhotos}/>
             <div className="cities-box">
               <form action="" onSubmit={handleSubmit} className="more-cities">
-                <label htmlFor="citiesToVisit" className="to-visit"><h2></h2>Add cities to visit :</label>
+                <label htmlFor="citiesToVisit" className="to-visit">Add cities to visit :</label>
                 <div className="cities-to-visit">
                   <input type="text" id="cityToVisit" required onChange={handleChange} value={textInput} />
                   <button><FontAwesomeIcon icon={faSuitcaseRolling} /></button>
