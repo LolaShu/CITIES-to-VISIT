@@ -7,7 +7,7 @@ const Form = (props) => {
         if (userChoice !== "placeholder") {
             props.getPhotos(userChoice);
         }
-    })
+    },[props,userChoice])
     return (
         <form className="city-choice">
             <label htmlFor="userChoice" className="sr-only">Select the city</label>

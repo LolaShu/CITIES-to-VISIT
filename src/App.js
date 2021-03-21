@@ -83,8 +83,8 @@ function App() {
               <form action="" onSubmit={handleSubmit} className="more-cities">
                 <label htmlFor="citiesToVisit" className="to-visit">Add cities to visit :</label>
                 <div className="cities-to-visit">
-                  <input type="text" id="cityToVisit" required onChange={handleChange} value={textInput} />
-                  <button><FontAwesomeIcon icon={faSuitcaseRolling} /></button>
+                  <input type="text" id="citiesToVisit" required onChange={handleChange} value={textInput} />
+                  <button aria-label="Add sity to visit" ><FontAwesomeIcon icon={faSuitcaseRolling} /></button>
                 </div>
               </form>
               <ul className="cities-list">
@@ -92,7 +92,7 @@ function App() {
                   citiesArray.map((city) => {
                     return (
                       <li key={city.uniqueKey}>
-                        <button onClick={() => { handleClick(city.uniqueKey) }}><FontAwesomeIcon icon={faCheck} /></button>
+                        <button aria-label="Pick a city" onClick={() => { handleClick(city.uniqueKey) }}><FontAwesomeIcon icon={faCheck} /></button>
                         <span>{city.title}</span>
                       </li>
                     )
