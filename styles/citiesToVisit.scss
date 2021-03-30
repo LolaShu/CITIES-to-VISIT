@@ -25,6 +25,8 @@
         box-shadow: 5px 5px 5px $darkcolor;
         border-top-left-radius: 10px;      
         border-bottom-left-radius: 10px;
+        border-top-right-radius: 0;      
+        border-bottom-right-radius: 0;
         outline: none;
         -webkit-appearance: none;
         transition: all ease-in-out .2s;
@@ -42,7 +44,7 @@
         font-family: "Raleway", sans-serif;
         border: 1px solid $darkcolor;
         border-top-right-radius: 10px;      
-        border-bottom-right-radius: 10px;
+        border-bottom-right-radius: 10px;        
         background: $lightcolor;
         color: $darkcolor;
         -webkit-appearance: none;
